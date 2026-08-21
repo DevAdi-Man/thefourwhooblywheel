@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3eqm01m5bdhd"]
+
+[ext_resource type="Script" uid="uid://2jau28l342gl" path="res://scene/main.gd" id="1_itxqv"]
+[ext_resource type="Texture2D" uid="uid://cs6jkq3u4rwho" path="res://assets/backgroundImage.png" id="2_v0l8b"]
+
+[node name="Main" type="Node2D" unique_id=1154469715]
+script = ExtResource("1_itxqv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1898333621]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1051679566]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v0l8b")
