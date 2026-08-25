@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://gh4wrfikt71o"]
+
+[ext_resource type="Texture2D" uid="uid://cs6jkq3u4rwho" path="res://assets/backgroundImage.png" id="1_d5io7"]
+[ext_resource type="Script" uid="uid://b7f5nxv5pxnlr" path="res://scene/second_screen.gd" id="1_jh5dy"]
+[ext_resource type="Texture2D" uid="uid://cy6iijkuj00t3" path="res://assets/cart2.png" id="2_v2i8m"]
+[ext_resource type="Texture2D" uid="uid://cdbs6dtbyu5dx" path="res://assets/laddoo_bheem_character.png" id="3_v2i8m"]
+[ext_resource type="Texture2D" uid="uid://6bfk6mejvbj7" path="res://assets/sound.png" id="4_jh5dy"]
+[ext_resource type="Texture2D" uid="uid://mljlpta6qj7n" path="res://assets/leftback.png" id="5_vq20e"]
+[ext_resource type="Texture2D" uid="uid://bt2qq64k1w3rk" path="res://assets/typerButtons/cartButtons_01.png" id="6_k73tq"]
+[ext_resource type="AudioStream" uid="uid://bufobp6khv5d" path="res://assets/sounds/button2.wav" id="6_vq20e"]
+[ext_resource type="Texture2D" uid="uid://deomkli56oncm" path="res://assets/typerButtons/cartButtons_02.png" id="7_kayrf"]
+[ext_resource type="Texture2D" uid="uid://b3x5ar5jkunwx" path="res://assets/typerButtons/cartButtons_03.png" id="8_dqobr"]
+[ext_resource type="Texture2D" uid="uid://crywvv3ilkk8m" path="res://assets/typerButtons/cartButtons_04.png" id="9_76cyf"]
+[ext_resource type="Texture2D" uid="uid://qtkjuxie5v7r" path="res://assets/mute.png" id="11_dqobr"]
+[ext_resource type="FontFile" uid="uid://ddicursm4ycbl" path="res://assets/fonts/flappyfont.TTF" id="12_76cyf"]
+[ext_resource type="AudioStream" uid="uid://b8i1cti2680k0" path="res://assets/sounds/wrong_answer.mp3" id="14_eed44"]
+[ext_resource type="AudioStream" uid="uid://hdhnde6nj686" path="res://assets/sounds/answer.mp3" id="15_qx5vc"]
+[ext_resource type="AudioStream" uid="uid://cbbbet2tbx14a" path="res://assets/sounds/question1.mp3" id="16_vxx3u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8qb6"]
+line_spacing = 16.0
+font = ExtResource("12_76cyf")
+font_size = 78
+font_color = Color(0.38039216, 0.15686275, 0.047058824, 1)
+outline_size = 20
+stacked_outline_count = 1
+stacked_outline_0/size = 16
+
+[node name="SecondScreen" type="Node2D" unique_id=1559512693]
+script = ExtResource("1_jh5dy")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=195125219]
+
+[node name="Background" type="TextureRect" parent="UI" unique_id=1951593693]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d5io7")
+
+[node name="Control" type="Control" parent="UI" unique_id=506540521]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cart" type="Sprite2D" parent="UI/Control" unique_id=199734932]
+position = Vector2(-149.99998, 65.99999)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_v2i8m")
+
+[node name="Character" type="TextureRect" parent="UI" unique_id=108899348]
+custom_minimum_size = Vector2(160, 200)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = -552.0
+offset_right = 257.0
+offset_bottom = -312.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_v2i8m")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="BackButton" type="TextureButton" parent="UI" unique_id=1416878939]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 106.0
+offset_top = 84.0
+offset_right = 206.0
+offset_bottom = 184.0
+texture_normal = ExtResource("5_vq20e")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=133136122]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="ButtonNumber1" type="TextureButton" parent="UI/HBoxContainer" unique_id=868027546]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture_normal = ExtResource("6_k73tq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonNumber2" type="TextureButton" parent="UI/HBoxContainer" unique_id=194000794]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture_normal = ExtResource("7_kayrf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonNumber3" type="TextureButton" parent="UI/HBoxContainer" unique_id=1711073728]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture_normal = ExtResource("8_dqobr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ButtonNumber4" type="TextureButton" parent="UI/HBoxContainer" unique_id=1001972633]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture_normal = ExtResource("9_76cyf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SoundButton" type="TextureButton" parent="UI" unique_id=1863895162]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -332.0
+offset_top = 75.0
+offset_right = -232.0
+offset_bottom = 175.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("4_jh5dy")
+texture_pressed = ExtResource("11_dqobr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Question" type="Label" parent="UI" unique_id=880171887]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -264.0
+offset_top = 80.0
+offset_right = 281.0
+offset_bottom = 241.0
+grow_horizontal = 2
+text = "Which Wheel  
+is Missing"
+label_settings = SubResource("LabelSettings_v8qb6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=255489828]
+stream = ExtResource("6_vq20e")
+pitch_scale = 1.19
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="." unique_id=1216524682]
+stream = ExtResource("14_eed44")
+
+[node name="RightAnswerSound" type="AudioStreamPlayer" parent="." unique_id=1932303932]
+stream = ExtResource("15_qx5vc")
+
+[node name="QuestionSound" type="AudioStreamPlayer" parent="." unique_id=316238536]
+stream = ExtResource("16_vxx3u")
+
+[connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/ButtonNumber4" to="." method="_on_button_number_4_pressed"]
+[connection signal="pressed" from="UI/SoundButton" to="." method="_on_sound_button_pressed"]

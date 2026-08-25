@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://df4t1tpib30ob"]
+
+[ext_resource type="Script" uid="uid://d1shak154gejr" path="res://scene/loading_scene.gd" id="1_avk5i"]
+[ext_resource type="FontFile" uid="uid://ddicursm4ycbl" path="res://assets/fonts/flappyfont.TTF" id="2_uxu0c"]
+[ext_resource type="Texture2D" uid="uid://dd2cgc550fsn" path="res://assets/Speed_Boost_Running.png" id="2_ywgsa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_liclb"]
+font = ExtResource("2_uxu0c")
+font_size = 58
+outline_size = 16
+outline_color = Color(1, 0.38039216, 1, 0.8627451)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywgsa"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxu0c"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npl71"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aga2b"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_378tr"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atkby"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0t8g"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7soa"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k8aw"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mu6e"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsqh8"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mmkp"]
+atlas = ExtResource("2_ywgsa")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8qb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywgsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxu0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npl71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aga2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_378tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atkby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0t8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7soa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k8aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mu6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsqh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mmkp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxu0c"]
+font = ExtResource("2_uxu0c")
+font_size = 58
+outline_size = 16
+outline_color = Color(1, 0.38039216, 1, 0.8627451)
+
+[node name="LoadingScene" type="CanvasLayer" unique_id=1106445521]
+script = ExtResource("1_avk5i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=639497819]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06469653, 0.06469653, 0.06469653, 1)
+
+[node name="Control" type="Control" parent="." unique_id=242427707]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingLabel" type="Label" parent="Control" unique_id=475650250]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOADING"
+label_settings = SubResource("LabelSettings_liclb")
+horizontal_alignment = 1
+
+[node name="RunningCharacter" type="AnimatedSprite2D" parent="Control" unique_id=1866111785]
+position = Vector2(-10.0000305, -149)
+scale = Vector2(2.0156264, 2.0117183)
+sprite_frames = SubResource("SpriteFrames_v8qb6")
+autoplay = "default"
+frame_progress = 0.49069896
+flip_h = true
+
+[node name="DotsLabel" type="Label" parent="Control" unique_id=170663252]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -34.0
+offset_right = 141.0
+offset_bottom = 25.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_uxu0c")

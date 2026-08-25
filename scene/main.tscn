@@ -2,16 +2,170 @@
 
 [ext_resource type="Script" uid="uid://2jau28l342gl" path="res://scene/main.gd" id="1_itxqv"]
 [ext_resource type="Texture2D" uid="uid://cs6jkq3u4rwho" path="res://assets/backgroundImage.png" id="2_v0l8b"]
+[ext_resource type="Texture2D" uid="uid://du70lwihdkhy5" path="res://assets/cartSpriteSheet_02.png" id="3_wp4xf"]
+[ext_resource type="FontFile" uid="uid://ddicursm4ycbl" path="res://assets/fonts/flappyfont.TTF" id="4_brvut"]
+[ext_resource type="Texture2D" uid="uid://cdbs6dtbyu5dx" path="res://assets/laddoo_bheem_character.png" id="5_0ha60"]
+[ext_resource type="Texture2D" uid="uid://yhdviabfr1gk" path="res://assets/playButton.png" id="6_p1hux"]
+[ext_resource type="Texture2D" uid="uid://mwhgfxifhy5u" path="res://assets/playButtonPressed.png" id="7_of57s"]
+[ext_resource type="Texture2D" uid="uid://6bfk6mejvbj7" path="res://assets/sound.png" id="8_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://qtkjuxie5v7r" path="res://assets/mute.png" id="9_tqoya"]
+[ext_resource type="AudioStream" uid="uid://bufobp6khv5d" path="res://assets/sounds/button2.wav" id="10_tqoya"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8qb6"]
+line_spacing = 16.0
+paragraph_spacing = 2.0
+font = ExtResource("4_brvut")
+font_size = 78
+font_color = Color(0.38039216, 0.15686275, 0.047058824, 1)
+outline_size = 32
+stacked_outline_count = 1
+stacked_outline_0/size = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brvut"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(0, 0, 355, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ha60"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(355, 0, 355, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5ol"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(710, 0, 355, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1hux"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(1065, 0, 355, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of57s"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(1420, 0, 355, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5f6u"]
+atlas = ExtResource("3_wp4xf")
+region = Rect2(1775, 0, 355, 349)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8qb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brvut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ha60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j5ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1hux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of57s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5f6u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="Main" type="Node2D" unique_id=1154469715]
 script = ExtResource("1_itxqv")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1898333621]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1898333621]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1051679566]
+[node name="Background" type="TextureRect" parent="UI" unique_id=1051679566]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_v0l8b")
+
+[node name="Title" type="Label" parent="UI" unique_id=72622086]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -281.0
+offset_top = 157.0
+offset_right = 310.0
+offset_bottom = 333.0
+grow_horizontal = 2
+text = "THE FOUR
+WOBBLY WHEELS"
+label_settings = SubResource("LabelSettings_v8qb6")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Character" type="TextureRect" parent="UI" unique_id=1871896528]
+custom_minimum_size = Vector2(160, 260)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = 23.0
+offset_right = 247.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0ha60")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="PlayButton" type="TextureButton" parent="UI" unique_id=558014524]
+custom_minimum_size = Vector2(120, 120)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 890.0
+offset_right = 1309.0
+offset_bottom = 1406.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_p1hux")
+texture_pressed = ExtResource("7_of57s")
+
+[node name="SoundButton" type="TextureButton" parent="UI" unique_id=234623869]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -332.0
+offset_top = 75.0
+offset_right = -232.0
+offset_bottom = 175.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("8_b5f6u")
+texture_pressed = ExtResource("9_tqoya")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="UI" unique_id=992367196]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cart" type="AnimatedSprite2D" parent="UI/Control" unique_id=933655774]
+position = Vector2(-96.99999, 145.99998)
+sprite_frames = SubResource("SpriteFrames_v8qb6")
+autoplay = "default"
+frame = 1
+frame_progress = 0.61074275
+
+[node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=219139902]
+stream = ExtResource("10_tqoya")
+
+[connection signal="pressed" from="UI/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/SoundButton" to="." method="_on_sound_button_pressed"]
