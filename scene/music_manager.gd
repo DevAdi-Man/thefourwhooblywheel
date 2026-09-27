@@ -17,3 +17,11 @@ func toggle_music() -> void:
 
 func sync_sound_button(btn: TextureButton) -> void:
 	btn.button_pressed = !music_player.playing
+
+func splash_icon(button: TextureButton) -> void:
+	button.pivot_offset = button.size / 2
+	var tween := create_tween()
+	tween.tween_property(button, "scale", Vector2(0.9, 0.9), 0.08)
+	tween.tween_property(button, "scale", Vector2(1.05, 1.05), 0.08)
+	tween.tween_property(button, "scale", Vector2(1.0, 1.0), 0.06)
+	await tween.finished

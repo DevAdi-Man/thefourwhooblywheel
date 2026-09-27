@@ -73,11 +73,11 @@ stretch_mode = 5
 flip_h = true
 
 [node name="BackButton" type="TextureButton" parent="UI" unique_id=1416878939]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 106.0
-offset_top = 84.0
-offset_right = 206.0
-offset_bottom = 184.0
+custom_minimum_size = Vector2(130, 130)
+offset_left = 69.0
+offset_top = 36.0
+offset_right = 169.0
+offset_bottom = 136.0
 texture_normal = ExtResource("5_vq20e")
 ignore_texture_size = true
 stretch_mode = 5
@@ -120,14 +120,14 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SoundButton" type="TextureButton" parent="UI" unique_id=1863895162]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(130, 130)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -332.0
-offset_top = 75.0
-offset_right = -232.0
-offset_bottom = 175.0
+offset_left = -188.0
+offset_top = 56.0
+offset_right = -88.0
+offset_bottom = 156.0
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = ExtResource("4_jh5dy")
@@ -150,6 +150,24 @@ label_settings = SubResource("LabelSettings_v8qb6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NextButton" type="TextureButton" parent="UI" unique_id=481237459]
+custom_minimum_size = Vector2(130, 130)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -179.0
+offset_right = -56.0
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_vq20e")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
 [node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=255489828]
 stream = ExtResource("6_vq20e")
 pitch_scale = 1.19
@@ -166,3 +184,4 @@ stream = ExtResource("16_vxx3u")
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer/ButtonNumber4" to="." method="_on_button_number_4_pressed"]
 [connection signal="pressed" from="UI/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="UI/NextButton" to="." method="_on_next_button_pressed"]

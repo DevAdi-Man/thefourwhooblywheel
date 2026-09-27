@@ -96,7 +96,7 @@ func _on_back_button_pressed() -> void:
 	pressed_sound.play()
 	await pressed_sound.finished
 
-	LoadingScene.change_scene_with_loading("res://scene/main.tscn",2.0)
+	LoadingScene.change_scene_with_loading("res://scene/third_scene.tscn", 2.0)
 
 func _on_sound_button_pressed() -> void:
 	pressed_sound.play()
@@ -128,4 +128,6 @@ func _correct_feedback(btn: TextureButton) -> void:
 	# Scale down and STAY there (no bounce back to 1.0)
 	tween.tween_property(btn, "scale", Vector2(0.85, 0.85), 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await right_answer_sound.finished
-	LoadingScene.change_scene_with_loading("res://scene/main.tscn",2.0)
+	var pannel_scene = preload("res://scene/pannel.tscn")
+	var pannel_inst = pannel_scene.instantiate()
+	add_child(pannel_inst)

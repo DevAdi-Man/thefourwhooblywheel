@@ -12,8 +12,10 @@ extends Node2D
 @onready var right_answer_sound: AudioStreamPlayer = $RightAnswerSound
 @onready var question_sound: AudioStreamPlayer = $QuestionSound
 @onready var sound_button: TextureButton = $UI/SoundButton
+@onready var next_button: TextureButton = $UI/NextButton
 
 func _ready() -> void:
+	next_button.visible = false
 	button_number_1.pressed.connect(_on_wrong_button_pressed.bind(button_number_1))
 	button_number_2.pressed.connect(_on_wrong_button_pressed.bind(button_number_2))
 	button_number_3.pressed.connect(_on_wrong_button_pressed.bind(button_number_3))
@@ -114,4 +116,10 @@ func _correct_feedback(btn: TextureButton) -> void:
 	tween.tween_property(btn, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(btn, "scale", Vector2(1.0, 1.0), 0.2).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await right_answer_sound.finished
-	LoadingScene.change_scene_with_loading("res://scene/third_scene.tscn",2.0)
+	next_button.visible = true
+
+
+func _on_next_button_pressed() -> void:
+	pressed_sound.play()
+	await MusicManager.splash_icon(next_button)
+	LoadingScene.change_scene_with_loading("res://scene/third_scene.tscn", 2.0)

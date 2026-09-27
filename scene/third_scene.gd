@@ -14,11 +14,13 @@ extends Node2D
 @onready var question_sound: AudioStreamPlayer = $QuestionSound
 @onready var question_1_sound: AudioStreamPlayer = $Question1Sound
 @onready var sound_button: TextureButton = $UI/SoundButton
+@onready var next_button: TextureButton = $UI/NextButton
 
 var correct_found: int = 0
 const TOTAL_CORRECT: int = 2
 
 func _ready() -> void:
+	next_button.visible = false
 	# Correct answers (4-legged animals)
 	card_button_1.pressed.connect(_on_right_button_pressed.bind(card_button_1))
 	card_button_2.pressed.connect(_on_right_button_pressed.bind(card_button_2))
@@ -97,7 +99,7 @@ func _on_back_button_pressed() -> void:
 	pressed_sound.play()
 	await pressed_sound.finished
 
-	LoadingScene.change_scene_with_loading("res://scene/main.tscn",2.0)
+	LoadingScene.change_scene_with_loading("res://scene/second_screen.tscn", 2.0)
 
 func _on_sound_button_pressed() -> void:
 	pressed_sound.play()
@@ -122,7 +124,7 @@ func _on_right_button_pressed(btn: TextureButton) -> void:
 	correct_found += 1
 	if correct_found >= TOTAL_CORRECT:
 		await right_answer_sound.finished
-		LoadingScene.change_scene_with_loading("res://scene/fourth_scene.tscn")
+		next_button.visible = true
 
 func _press_feedback(btn: TextureButton) -> void:
 	btn.pivot_offset = btn.size / 2
@@ -135,3 +137,9 @@ func _correct_feedback(btn: TextureButton) -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(btn, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(btn, "scale", Vector2(1.0, 1.0), 0.2).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+
+
+func _on_next_button_pressed() -> void:
+	pressed_sound.play()
+	await MusicManager.splash_icon(next_button)
+	LoadingScene.change_scene_with_loading("res://scene/fourth_scene.tscn")
